@@ -86,12 +86,12 @@ with container_intro:
 
     
 
-#TEST DATA CONTAINER
-#load test sample from our provided test
-with container_intro:
-    st.markdown('**This is how a random sample of our raw data looks like:**')
-    data = load_data('../models/X_test.csv')
-    st.dataframe(data)
+# #TEST DATA CONTAINER
+# #load test sample from our provided test
+# with container_intro:
+#     st.markdown('**This is how a random sample of our raw data looks like:**')
+#     data = load_data('../models/X_test.csv')
+#     st.dataframe(data)
 
     #predicting on the prepared test data df
     if st.button('Predict on our provided test data'):
