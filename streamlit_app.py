@@ -25,7 +25,7 @@ container_upload_data = st.container()
 expander_upload_data = st.expander(label='Click to expand')
 
 #URL for request to backend
-url = 'https://heroku-cmw-test.herokuapp.com'
+url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
 
 # Defining Prediction Function
 def predict_rating(url, df):
@@ -51,7 +51,7 @@ def load_data(file):
 
 #SIDEBAR
 st.sidebar.title('Fail or not to Fail!')
-st.sidebar.image('../docs/Guardians_memory.jpg')
+#st.sidebar.image('../docs/Guardians_memory.jpg')
 st.sidebar.subheader("Guardians of the Memory", )
 st.sidebar.text('Felix, Chang Ming, Andreas & Daniela')
 
@@ -86,16 +86,16 @@ with container_intro:
 
     
 
-#TEST DATA CONTAINER
-#load test sample from our provided test
-with container_intro:
-    st.markdown('**This is how a random sample of our raw data looks like:**')
-    data = load_data('../models/X_test.csv')
-    st.dataframe(data)
+# #TEST DATA CONTAINER
+# #load test sample from our provided test
+# with container_intro:
+#     st.markdown('**This is how a random sample of our raw data looks like:**')
+#     data = load_data('../models/X_test.csv')
+#     st.dataframe(data)
 
     #predicting on the prepared test data df
     if st.button('Predict on our provided test data'):
-        y_pred = predict_rating(url, data)
+        #y_pred = predict_rating(url, data)
         st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
     st.header('')
     st.header('')
@@ -105,7 +105,7 @@ with container_intro:
 #UPLOAD CONTAINER
 #subheader for uploading own data
 with container_upload_data:
-    st.image('../docs/HDD.jpg')
+    #st.image('../docs/HDD.jpg')
     st.subheader('Want to predict for your own hard drive?')
     with expander_upload_data: 
         #upload a file
