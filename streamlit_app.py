@@ -48,7 +48,6 @@ def load_data(file):
 
 
 
-
 #SIDEBAR
 st.sidebar.title('Fail or not to Fail!')
 #st.sidebar.image('../docs/Guardians_memory.jpg')
@@ -73,6 +72,7 @@ st.sidebar.header('')
 st.sidebar.header('')
 st.sidebar.header('')
 st.sidebar.text('Ⓒ 2022. All rights Reserved.')
+
 
 
 #INTRO CONTAINER
