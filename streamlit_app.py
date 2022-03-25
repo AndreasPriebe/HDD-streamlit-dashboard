@@ -94,12 +94,19 @@ with container_intro:
 with container_intro:
     st.markdown('**This is how a random sample of our raw data looks like:**')
     data = pd.read_csv('file/test.csv')
+    data.sort_values('date', inplace=True, ascending=False)
     st.write(data.head(5))
 
     #predicting on the prepared test data df
     if st.button('Predict on our provided test data'):
         y_pred = predict_rating(url, data)
-        st.write(y_pred) #' Based on provided values your hdd will '+ str(int(y_pred)))
+        y_pred = y_pred.split(':')[1]
+        y_pred = y_pred.split(',')[0]
+        if y_pred == "false":
+            st.write('Your hard drive will not fail in the next 30 days!')
+            st.balloons()
+        else:
+            st.write('Your hard drive might fail in the next 30 days!')
     st.header('')
     st.header('')
 
