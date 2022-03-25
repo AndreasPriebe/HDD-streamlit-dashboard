@@ -26,7 +26,8 @@ container_upload_data = st.container()
 expander_upload_data = st.expander(label='Click to expand')
 
 #URL for request to backend
-url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
+url = 'https://felix-roc-capstone.herokuapp.com/receive_dataframe'
+# CMW url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
 
 # Defining Prediction Function
 def predict_rating(url, df):
