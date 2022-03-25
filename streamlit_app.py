@@ -126,7 +126,7 @@ with container_upload_data:
             y_pred = predict_rating(url, dataframe_upload)
             y_pred = y_pred.split(':')[1]
             y_pred = y_pred.split(',')[0]
-            if y_pred is "false":
+            if y_pred == "false":
                 st.write('Your hard drive will not fail in the next 30 days!')
                 st.balloons()
             else:
