@@ -25,7 +25,7 @@ container_test_data = st.container()
 container_upload_data = st.container()
 expander_upload_data = st.expander(label='Click to expand')
 
-#URL for request to backend
+#URL for request to backend (Felix)
 url = 'https://felix-roc-capstone.herokuapp.com/receive_dataframe'
 # CMW url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
 
@@ -93,7 +93,9 @@ with container_intro:
 #load test sample from our provided test
 with container_intro:
     st.markdown('**This is how a random sample of our raw data looks like:**')
-    data = pd.read_csv('file/test.csv')
+    data = pd.read_csv('file/test_data_final.csv')
+    serial = data.sample(1)['serial_number'].to_list()[0]
+    data = data[data['serial_number'] == serial]
     data.sort_values('date', inplace=True, ascending=False)
     st.write(data.head(5))
 
@@ -120,7 +122,7 @@ with container_upload_data:
     # with expander_upload_data: 
     #upload a file
     dataframe_upload = None
-    uploaded_file = st.file_uploader("Choose your file for your own drive to upload. Make sure it's data for the same model.", help= 'Drag your files here')
+    uploaded_file = st.file_uploader("Choose your file for your own hard drive to upload. Make sure it's only data for the same model.", help= 'Drag your files here')
     if uploaded_file is not None:
         dataframe_upload = pd.read_csv(uploaded_file)
         dataframe_upload.sort_values('date', inplace=True, ascending=False)
