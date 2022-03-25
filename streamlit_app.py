@@ -6,6 +6,7 @@ import streamlit as st
 import numpy as np
 
 import random
+import json
 
 #saving/loading the modell
 # import pickle
@@ -29,8 +30,9 @@ url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
 
 # Defining Prediction Function
 def predict_rating(url, df):
-    data = df.to_json()
-    r = requests.post(url, json=data)
+    data = df.to_dict()
+    headers = {'Content-Type': 'application/json'}
+    r = requests.post(url, json=json.dumps(data), headers=headers)
     y_pred = r.text
     return y_pred
 
