@@ -122,5 +122,5 @@ with container_upload_data:
         # executing preprocessing via pipeline
         if st.button('Predict'):
             y_pred = predict_rating(url, dataframe_upload)
-            st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
+            st.write(y_pred) #' Based on provided values your hdd will '+ str(int(y_pred)))
             st.balloons()
