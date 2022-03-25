@@ -96,11 +96,11 @@ with container_intro:
 #     st.dataframe(data)
 
     #predicting on the prepared test data df
-    if st.button('Predict on our provided test data'):
+    #if st.button('Predict on our provided test data'):
         #y_pred = predict_rating(url, data)
-        st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
-    st.header('')
-    st.header('')
+        #st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
+    # st.header('')
+    # st.header('')
 
 
 
@@ -114,9 +114,9 @@ with container_upload_data:
         dataframe = None
         uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
         if uploaded_file is not None:
-                dataframe_upload = pd.read_csv(uploaded_file)
-                st.write(dataframe_upload.head(5))
-                st.success('Your file was successfully uploaded!')
+            dataframe_upload = pd.read_csv(uploaded_file)
+            st.write(dataframe_upload.head(5))
+            st.success('Your file was successfully uploaded!')
 
         # Predicting HDD failure on your own data
         # executing preprocessing via pipeline
