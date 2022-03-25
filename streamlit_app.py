@@ -103,10 +103,10 @@ with container_intro:
         y_pred = y_pred.split(':')[1]
         y_pred = y_pred.split(',')[0]
         if y_pred == "false":
-            st.write('**Your hard drive will not fail in the next 30 days!**')
+            st.write('__**Your hard drive will not fail in the next 30 days!**__')
             st.balloons()
         else:
-            st.write('**Your hard drive might fail in the next 30 days!**')
+            st.write('__**Your hard drive might fail in the next 30 days!**__')
     st.header('')
     st.header('')
 
@@ -134,7 +134,7 @@ with container_upload_data:
             y_pred = y_pred.split(':')[1]
             y_pred = y_pred.split(',')[0]
             if y_pred == "false":
-                st.write('**Your hard drive will not fail in the next 30 days!**')
+                st.write('__**Your hard drive will not fail in the next 30 days!**__')
                 st.balloons()
             else:
-                st.write('**Your hard drive might fail in the next 30 days!**')
+                st.write('__**Your hard drive might fail in the next 30 days!**__')
