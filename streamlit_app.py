@@ -110,7 +110,6 @@ with container_upload_data:
     st.image('jpg/HDD.jpg')
     st.subheader('Want to predict for your own hard drive?')
     # with expander_upload_data: 
-
     #upload a file
     uploaded_file = None
     uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
