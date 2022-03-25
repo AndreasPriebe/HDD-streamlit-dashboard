@@ -3,21 +3,13 @@ import requests
 
 import pandas as pd
 import streamlit as st 
-import numpy as np
 
-import random
 import json
 
 #saving/loading the modell
 # import pickle
 import warnings
 warnings.filterwarnings('ignore')
-
-# # loading model and data
-# xgb_model = '../models/xgb_model.sav'
-# loaded_model = pickle.load(open(xgb_model, 'rb'))
-# X_test = pd.read_csv('../models/X_test.csv')
-# y_test = pd.read_csv('../models/y_test.csv')
 
 #defining containers
 container_intro = st.container()
@@ -43,12 +35,6 @@ def load_data(file):
     data = pd.read_csv(file)
     model_pred = data.sample(30)
     return model_pred
-
-#  n = 89379 #number of records in file
-#     s = 5 #desired sample size
-#     skip = sorted(random.sample(range(n),n-s))
-#     data = pd.read_csv(file, skiprows=skip)
-
 
 
 #SIDEBAR
