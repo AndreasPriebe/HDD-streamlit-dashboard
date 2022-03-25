@@ -130,4 +130,4 @@ with container_upload_data:
                 st.write('Your hard drive will not fail in the next 30 days!')
                 st.balloons()
             else:
-                st.write('your hard drive might fail in the next 30 days!')
+                st.write('Your hard drive might fail in the next 30 days!')
