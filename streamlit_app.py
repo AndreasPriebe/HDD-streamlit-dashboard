@@ -88,19 +88,19 @@ with container_intro:
 
     
 
-# #TEST DATA CONTAINER
-# #load test sample from our provided test
-# with container_intro:
-#     st.markdown('**This is how a random sample of our raw data looks like:**')
-#     data = load_data('../models/X_test.csv')
-#     st.dataframe(data)
+#TEST DATA CONTAINER
+#load test sample from our provided test
+with container_intro:
+    st.markdown('**This is how a random sample of our raw data looks like:**')
+    data = load_data('file/test.csv')
+    st.dataframe(data)
 
     #predicting on the prepared test data df
-    #if st.button('Predict on our provided test data'):
-        #y_pred = predict_rating(url, data)
+    if st.button('Predict on our provided test data'):
+        y_pred = predict_rating(url, data)
         #st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
-    # st.header('')
-    # st.header('')
+    st.header('')
+    st.header('')
 
 
 
@@ -110,8 +110,9 @@ with container_upload_data:
     st.image('jpg/HDD.jpg')
     st.subheader('Want to predict for your own hard drive?')
     # with expander_upload_data: 
+
     #upload a file
-    dataframe = None
+    uploaded_file = None
     uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
     if uploaded_file is not None:
         dataframe_upload = pd.read_csv(uploaded_file)
