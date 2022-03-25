@@ -99,7 +99,7 @@ with container_intro:
     #predicting on the prepared test data df
     if st.button('Predict on our provided test data'):
         y_pred = predict_rating(url, data)
-        #st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
+        st.write(y_pred) #' Based on provided values your hdd will '+ str(int(y_pred)))
     st.header('')
     st.header('')
 
@@ -116,6 +116,7 @@ with container_upload_data:
     uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
     if uploaded_file is not None:
         dataframe_upload = pd.read_csv(uploaded_file)
+        dataframe_upload.sort_values('date', inplace=True, ascending=False)
         st.write(dataframe_upload.head(5))
         st.success('Your file was successfully uploaded!')
 
@@ -123,5 +124,5 @@ with container_upload_data:
         # executing preprocessing via pipeline
         if st.button('Predict'):
             y_pred = predict_rating(url, dataframe_upload)
-            st.write(y_pred) #' Based on provided values your hdd will '+ str(int(y_pred)))
+            st.write(y_pred['0']) #' Based on provided values your hdd will '+ str(int(y_pred)))
             st.balloons()
