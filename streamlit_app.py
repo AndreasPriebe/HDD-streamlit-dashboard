@@ -32,7 +32,7 @@ url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
 def predict_rating(url, df):
     data = json.loads(df.to_json(orient='columns'))
     headers = {'Content-Type': 'application/json'}
-    r = requests.post(url, json=data, headers=headers) #
+    r = requests.post(url, json=data, headers=headers)
     y_pred = r.text
     return y_pred
 
@@ -109,14 +109,14 @@ with container_intro:
 with container_upload_data:
     st.image('jpg/HDD.jpg')
     st.subheader('Want to predict for your own hard drive?')
-    with expander_upload_data: 
-        #upload a file
-        dataframe = None
-        uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
-        if uploaded_file is not None:
-            dataframe_upload = pd.read_csv(uploaded_file)
-            st.write(dataframe_upload.head(5))
-            st.success('Your file was successfully uploaded!')
+#with expander_upload_data: 
+    #upload a file
+    dataframe = None
+    uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
+    if uploaded_file is not None:
+        dataframe_upload = pd.read_csv(uploaded_file)
+        st.write(dataframe_upload.head(5))
+        st.success('Your file was successfully uploaded!')
 
         # Predicting HDD failure on your own data
         # executing preprocessing via pipeline
