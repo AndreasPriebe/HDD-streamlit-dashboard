@@ -126,6 +126,6 @@ with container_upload_data:
             y_pred = predict_rating(url, dataframe_upload)
             st.write(y_pred)
             y_pred = y_pred.split(':')[1]
-            y_pred = y_pred.split(':')[0]
+            y_pred = y_pred.split(',')[0]
             st.write(y_pred) #' Based on provided values your hdd will '+ str(int(y_pred)))
             st.balloons()
