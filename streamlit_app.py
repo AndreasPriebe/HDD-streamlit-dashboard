@@ -111,7 +111,7 @@ with container_upload_data:
     st.subheader('Want to predict for your own hard drive?')
     # with expander_upload_data: 
     #upload a file
-    #uploaded_file = None
+    dataframe_upload = None
     uploaded_file = st.file_uploader("Choose a file to upload", help= 'Drag your files here')
     if uploaded_file is not None:
         dataframe_upload = pd.read_csv(uploaded_file)
