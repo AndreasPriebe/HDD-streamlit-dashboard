@@ -32,7 +32,7 @@ url = 'https://heroku-cmw-test.herokuapp.com/receive_dataframe'
 def predict_rating(url, df):
     data = df.to_dict()
     headers = {'Content-Type': 'application/json'}
-    r = requests.post(url, json=json.dumps(data), headers=headers) #
+    r = requests.post(url, json=data, headers=headers) #
     y_pred = r.text
     return y_pred
 
