@@ -124,6 +124,7 @@ with container_upload_data:
         # executing preprocessing via pipeline
         if st.button('Predict'):
             y_pred = predict_rating(url, dataframe_upload)
+            st.write(y_pred)
             y_pred = y_pred.split(':')[1]
             y_pred = y_pred.split(':')[0]
             st.write(y_pred) #' Based on provided values your hdd will '+ str(int(y_pred)))
