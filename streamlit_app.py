@@ -92,15 +92,15 @@ with container_intro:
 #load test sample from our provided test
 with container_intro:
     st.markdown('**This is how a random sample of our raw data looks like:**')
-    data = load_data('file/test.csv')
+    data = pd.read_csv('file/test.csv')
     st.dataframe(data)
 
-    #predicting on the prepared test data df
-    if st.button('Predict on our provided test data'):
-        y_pred = predict_rating(url, data)
-        #st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
-    st.header('')
-    st.header('')
+    # #predicting on the prepared test data df
+    # if st.button('Predict on our provided test data'):
+    #     y_pred = predict_rating(url, data)
+    #     #st.write(' Based on provided values your hdd will '+ str(int(y_pred)))
+    # st.header('')
+    # st.header('')
 
 
 
