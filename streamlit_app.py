@@ -52,7 +52,7 @@ def load_data(file):
 
 #SIDEBAR
 st.sidebar.title('Fail or not to Fail!')
-#st.sidebar.image('../docs/Guardians_memory.jpg')
+st.sidebar.image('/jpg/Guardians_memory.jpg')
 st.sidebar.subheader("Guardians of the Memory", )
 st.sidebar.text('Felix, Chang Ming, Andreas & Daniela')
 
@@ -107,7 +107,7 @@ with container_intro:
 #UPLOAD CONTAINER
 #subheader for uploading own data
 with container_upload_data:
-    #st.image('../docs/HDD.jpg')
+    st.image('/jpg/HDD.jpg')
     st.subheader('Want to predict for your own hard drive?')
     with expander_upload_data: 
         #upload a file
