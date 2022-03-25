@@ -34,7 +34,7 @@ def predict_rating(url, df):
     headers = {'Content-Type': 'application/json'}
     r = requests.post(url, json=json.dumps(data), headers=headers) #
     y_pred = r.text
-    return data
+    return y_pred
 
 #function for loading some data from the test data
 @st.cache
